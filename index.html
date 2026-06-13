@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daniel ❤️ Tatiana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+overflow:hidden;
+height:100vh;
+background:linear-gradient(180deg,#0f1027,#2f2459,#ff8db3);
+color:white;
+}
+
+#stars{
+position:fixed;
+inset:0;
+z-index:0;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{opacity:.2}
+}
+
+.screen{
+position:absolute;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+z-index:2;
+}
+
+.screen.active{
+display:flex;
+flex-direction:column;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+p{
+max-width:800px;
+font-size:1.3rem;
+line-height:1.8;
+}
+
+.btn{
+margin-top:40px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+font-size:1rem;
+cursor:pointer;
+background:white;
+color:#ff4f92;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.music{
+position:fixed;
+top:20px;
+right:20px;
+z-index:10;
+background:white;
+color:#ff4f92;
+border:none;
+padding:12px 20px;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.progress{
+position:fixed;
+bottom:0;
+left:0;
+height:5px;
+background:#fff;
+width:0%;
+transition:1s;
+z-index:10;
+}
+
+.chat{
+background:rgba(255,255,255,.1);
+padding:25px;
+border-radius:20px;
+max-width:600px;
+margin:auto;
+text-align:left;
+}
+
+.msg{
+margin:15px 0;
+padding:10px 15px;
+border-radius:15px;
+background:rgba(255,255,255,.15);
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 5s linear forwards;
+pointer-events:none;
+z-index:99;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-500px);
+opacity:0;
+}
+}
+
+.final-buttons{
+display:flex;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+<source src="algo-contigo.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()">
+🎵 Música
+</button>
+
+<div id="stars"></div>
+
+<div class="progress" id="progress"></div>
+
+<!-- INICIO -->
+
+<section class="screen active">
+<h1>Daniel ❤️ Tatiana</h1>
+<br>
+<p>
+Algunas historias empiezan por casualidad.
+<br><br>
+Otras parecen escritas por el destino.
+</p>
+
+<button class="btn" onclick="next()">
+Comenzar nuestra historia ❤️
+</button>
+</section>
+
+<!-- 1 -->
+
+<section class="screen">
+<h2>☕ Capítulo I</h2>
+
+<h1>La Cafetería</h1>
+
+<p>
+9 de abril de 2024.
+<br><br>
+Era un día cualquiera.
+<br><br>
+Ella fregaba platos en una cafetería.
+<br>
+Yo todavía no lo sabía...
+<br>
+pero estaba a punto de conocer a la mujer de mi vida.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 2 -->
+
+<section class="screen">
+<h2>😏 Capítulo II</h2>
+
+<h1>El Amigo</h1>
+
+<p>
+Un amigo que trabajaba con ella tuvo una idea.
+<br><br>
+"¿Por qué no os venís después del trabajo?"
+<br><br>
+Y así...
+<br>
+sin importancia aparente,
+<br>
+empezó todo.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 3 -->
+
+<section class="screen">
+<h2>💬 Capítulo III</h2>
+
+<h1>La Excusa Perfecta</h1>
+
+<div class="chat">
+
+<div class="msg">
+Tatiana: Oye...
+</div>
+
+<div class="msg">
+Tatiana: ¿Me das tu número?
+</div>
+
+<div class="msg">
+Daniel: Claro 😂
+</div>
+
+<div class="msg">
+Daniel: ¿Para qué?
+</div>
+
+<div class="msg">
+Tatiana: Quería conseguir marihuana 😭😂
+</div>
+
+</div>
+
+<br>
+
+<p>
+Y la mejor historia de mi vida...
+<br>
+empezó gracias a la mejor excusa imposible.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 4 -->
+
+<section class="screen">
+<h2>❤️ Capítulo IV</h2>
+
+<h1>Cada vez más cerca</h1>
+
+<p>
+Empezamos a quedar.
+<br>
+Una vez.
+<br>
+Luego otra.
+<br>
+Luego perdí la cuenta.
+<br><br>
+Porque ya no importaban los planes.
+<br>
+Lo importante era verla.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 5 -->
+
+<section class="screen">
+<h2>📅 Capítulo V</h2>
+
+<h1>21/04/2024</h1>
+
+<p id="days"></p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 6 -->
+
+<section class="screen">
+<h2>✨ Capítulo VI</h2>
+
+<h1>Lo que encontré en ti</h1>
+
+<p>
+Encontré calma.
+<br>
+Encontré refugio.
+<br>
+Encontré risas.
+<br>
+Encontré hogar.
+<br><br>
+Y sin buscarlo...
+<br>
+te encontré a ti.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 7 -->
+
+<section class="screen">
+<h2>💍 Capítulo VII</h2>
+
+<h1>El Futuro</h1>
+
+<p>
+Hoy tengo 18.
+<br>
+Tú tienes 19.
+<br><br>
+Y cuando pienso en el futuro...
+<br>
+siempre apareces tú.
+<br><br>
+Porque dentro de poco nos casaremos.
+<br><br>
+Y no puedo esperar para seguir viviendo esta historia contigo.
+</p>
+
+<button class="btn" onclick="next()">Continuar</button>
+</section>
+
+<!-- 8 -->
+
+<section class="screen">
+<h2>💌 Carta para Tatiana</h2>
+
+<p>
+Si pudiera volver al 9 de abril de 2024...
+<br><br>
+volvería a mirar hacia aquella cafetería.
+<br><br>
+Volvería a sentarme aquel día.
+<br><br>
+Volvería a responder cada mensaje.
+<br><br>
+Volvería a elegirte.
+<br><br>
+Una y otra vez.
+<br><br>
+Porque entre todas las casualidades de mi vida...
+<br>
+tú fuiste mi favorita.
+<br><br>
+Te amo ❤️
+<br><br>
+— Daniel
+</p>
+
+<button class="btn" onclick="next()">Final</button>
+</section>
+
+<!-- FINAL -->
+
+<section class="screen">
+
+<h1>🌹</h1>
+
+<h2>¿Quieres seguir escribiendo esta historia conmigo?</h2>
+
+<div class="final-buttons">
+
+<button class="btn" onclick="love()">
+❤️ Sí
+</button>
+
+<button class="btn" onclick="love()">
+❤️ Siempre
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+const screens=document.querySelectorAll(".screen");
+const progress=document.getElementById("progress");
+
+let current=0;
+
+function next(){
+
+screens[current].classList.remove("active");
+
+current++;
+
+if(current<screens.length){
+screens[current].classList.add("active");
+}
+
+progress.style.width=((current)/(screens.length-1))*100+"%";
+
+}
+
+function toggleMusic(){
+
+let music=document.getElementById("music");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
+function love(){
+
+for(let i=0;i<100;i++){
+
+setTimeout(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.bottom="-50px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},i*80);
+
+}
+
+setTimeout(()=>{
+
+document.body.innerHTML=
+`
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:linear-gradient(180deg,#0f1027,#2f2459,#ff8db3);
+color:white;
+padding:20px;
+">
+
+<h1 style="font-family:Dancing Script,cursive;font-size:5rem;">
+❤️
+</h1>
+
+<h2>
+Entonces esto no es un final...
+</h2>
+
+<h1 style="font-family:Dancing Script,cursive;">
+Es el comienzo del siguiente capítulo
+</h1>
+
+<p style="font-size:1.5rem;margin-top:20px;">
+Te amo Tatiana ❤️
+<br><br>
+— Daniel
+</p>
+
+</div>
+`;
+
+},4500);
+
+}
+
+const start=new Date("2024-04-21");
+const now=new Date();
+
+const diff=Math.floor(
+(now-start)/(1000*60*60*24)
+);
+
+document.getElementById("days").innerHTML=
+`
+Han pasado <b>${diff}</b> días
+<br><br>
+desde que comenzó nuestra historia ❤️
+`;
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*3+"s";
+
+document.getElementById("stars").appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
