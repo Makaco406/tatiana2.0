@@ -18,10 +18,12 @@ box-sizing:border-box;
 
 body{
 font-family:Poppins,sans-serif;
-overflow:hidden;
-height:100vh;
+min-height:100vh;
+overflow-x:hidden;
+overflow-y:auto;
 background:linear-gradient(180deg,#0f1027,#2f2459,#ff8db3);
 color:white;
+-webkit-font-smoothing:antialiased;
 }
 
 #stars{
@@ -47,11 +49,14 @@ animation:twinkle 3s infinite;
 position:absolute;
 inset:0;
 display:none;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:30px;
+padding:30px 20px 140px 20px;
 z-index:2;
+overflow-y:auto;
+-webkit-overflow-scrolling:touch;
 }
 
 .screen.active{
@@ -72,18 +77,18 @@ transform:translateY(0);
 }
 
 h1{
-font-size:4rem;
+font-size:clamp(2.3rem,8vw,4rem);
 font-family:'Dancing Script',cursive;
 }
 
 h2{
-font-size:2rem;
+font-size:clamp(1.3rem,5vw,2rem);
 margin-bottom:20px;
 }
 
 p{
 max-width:800px;
-font-size:1.3rem;
+font-size:clamp(1rem,4vw,1.3rem);
 line-height:1.8;
 }
 
@@ -170,6 +175,32 @@ gap:20px;
 margin-top:30px;
 flex-wrap:wrap;
 justify-content:center;
+}
+
+@media (max-width:480px){
+
+.btn{
+width:90%;
+max-width:320px;
+padding:16px;
+}
+
+.music{
+top:15px;
+right:15px;
+padding:10px 14px;
+font-size:.9rem;
+}
+
+.chat{
+width:100%;
+}
+
+.final-buttons{
+flex-direction:column;
+align-items:center;
+}
+
 }
 
 </style>
@@ -410,7 +441,9 @@ Te amo ❤️
 
 <h1>🌹</h1>
 
-<h2>¿Quieres seguir escribiendo esta historia conmigo?</h2>
+<h2 style="max-width:90%;">
+¿Quieres seguir escribiendo esta historia conmigo?
+</h2>
 
 <div class="final-buttons">
 
